@@ -10,3 +10,9 @@ class contactForm(forms.Form):
     birthday = forms.DateField()
     # appointment = forms.DateRangeField()
     appointment2 = forms.DateTimeField()
+
+    CHOICES = [('S','Small'),('M','Medium'),('L','Large')]
+    size = forms.ChoiceField(choices = CHOICES)
+
+    MEAL = [('P','Pepperoni'),('M','Mashroom'),('C','Chicken')]
+    pizza = forms.MultipleChoiceField(choices=MEAL)
