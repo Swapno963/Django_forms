@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . forms import contactForm,studentForm
+from . forms import contactForm,studentForm,DefaultData
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -20,7 +20,8 @@ def submit_form(request):
 def DjangoForm(request):
     if request.method == 'POST':
         # form = contactForm(request.POST, request.FILES)
-        form = studentForm(request.POST, request.FILES)
+        # form = studentForm(request.POST, request.FILES)
+        form = DefaultData(request.POST, request.FILES)
         if form.is_valid():
             # file = form.cleaned_data['file']
             # with open('./first_app/upload/' + file.name, 'wb+') as destination:
